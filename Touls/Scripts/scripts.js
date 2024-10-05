@@ -30,6 +30,7 @@ function Question_Generation() {
   }
   else {
     document.getElementById("problem_statement").textContent = "";
+    document.getElementById("complementary").textContent = "";
   };
 }
 
