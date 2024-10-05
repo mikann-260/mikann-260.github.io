@@ -58,7 +58,7 @@ function answer() {
     var Answer = (radius ** 2 * 3.14) * percentage;
     var formula = percentage == 1 ? `${radius}×${radius}×3.14` : `${radius}×${radius}×3.14×${percentage}`;
 
-    document.getElementById("formula").textContent = formula;
+    document.getElementById("formula").textContent = `${formula}=${Answer}`;
     document.getElementById("Answers_to_the_question").textContent = `${Answer}㎠`;
   }
 }
