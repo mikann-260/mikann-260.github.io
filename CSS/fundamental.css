@@ -185,6 +185,7 @@ html, body {
   padding: 0;
   width: 100vw;
   height: 100vh;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 header {
@@ -233,3 +234,6 @@ header {
 body *:not(header) {
   margin: 5px;
 }
+
+/* フォントCSS */
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@100..900&display=swap');
