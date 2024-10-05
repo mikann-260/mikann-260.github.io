@@ -2,7 +2,7 @@ function hideOption() {
   var select = document.getElementById("Issue_type");
   var optionToHide = select.querySelector('option[value="Select_type_of_issue"]');
   if (optionToHide) {
-      optionToHide.style.display = 'none';
+    optionToHide.style.display = 'none';
   }
 }
 
@@ -10,8 +10,8 @@ function Question_Generation() {
   var selectText = document.getElementById("Issue_type").value;
   if (selectText !== "Select_type_of_issue") {
     if (selectText == "Area_of_circle") {
-      let Diameter_or_radius_List = ["直径","半径"];
-      let percentage_List = ["全体","2分の1","4分の1","8分の1"];
+      let Diameter_or_radius_List = ["直径", "半径"];
+      let percentage_List = ["全体", "2分の1", "4分の1", "8分の1"];
 
       var percentage = percentage_List[Math.floor(Math.random() * percentage_List.length)];
       var size = getRandomInt(2, 25);
@@ -25,7 +25,8 @@ function Question_Generation() {
 
       document.getElementById("problem_statement").textContent = `${Diameter_or_radius}${size}cmの${percentage}の面積`;
       document.getElementById("complementary").textContent = "(円周率は3.14とする)";
-      document.getElementById("Answers_to_the_question").textContent = "";
+      document.getElementById("Answers_to_the_question").innerHTML = "<br>";
+      document.getElementById("formula").innerHTML = "<br>";
     }
   } else {
     document.getElementById("problem_statement").innerHTML = "<br>";
@@ -55,12 +56,16 @@ function answer() {
     }
 
     var Answer = (radius ** 2 * 3.14) * percentage;
+    var formula = percentage == 1 ? `${radius}×${radius}×3.14` : `${radius}×${radius}×3.14×${percentage}`;
+
+    document.getElementById("formula").textContent = formula;
     document.getElementById("Answers_to_the_question").textContent = `${Answer}㎠`;
   }
 }
 
 function hide() {
-  document.getElementById("Answers_to_the_question").textContent = "";
+  document.getElementById("formula").innerHTML = "<br>";
+  document.getElementById("Answers_to_the_question").innerHTML = "<br>";
 }
 
 function getRandomInt(min, max) {
