@@ -3,9 +3,8 @@
   <head>
     <title>算数の問題作成ツール</title>
     <meta charset="UTF-8">
-    <script src="Scripts/scripts.js"></script>
     <link rel="stylesheet" href="../CSS/reset.css">
-    <link rel="stylesheet" href="CSS/ctyles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body onload="hideOption()">
@@ -26,8 +25,8 @@
         </div>
         <button type="button" onclick="Question_Generation()">問題生成</button>
         <h3>問題文</h3>
-        <p id="problem_statement"><br></p>
-        <p id="complementary"><br></p>
+        <p id="problem_statement">&nbsp;</p>
+        <p id="complementary">&nbsp;</p>
         <h3>答え</h3>
         <div>
           <button type="button" onclick="answer()">表示</button>
@@ -36,5 +35,6 @@
         <h3 id="Answers_to_the_question"></h3>
       </div>
     </div>
+    <script src="Scripts/scripts.js"></script>
   </body>
 </html>
