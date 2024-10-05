@@ -29,8 +29,8 @@ function Question_Generation() {
     }
   }
   else {
-    document.getElementById("problem_statement").textContent = "<tr>";
-    document.getElementById("complementary").textContent = "<tr>";
+    document.getElementById("problem_statement").textContent = <tr>;
+    document.getElementById("complementary").textContent = <tr>;
   }
 }
 
