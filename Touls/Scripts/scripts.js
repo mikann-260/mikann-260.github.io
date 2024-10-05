@@ -28,6 +28,10 @@ function Question_Generation() {
       document.getElementById("Answers_to_the_question").textContent = "";
     }
   }
+  else {
+    document.getElementById("problem_statement").textContent = "<tr>";
+    document.getElementById("complementary").textContent = "<tr>";
+  }
 }
 
 function answer() {
