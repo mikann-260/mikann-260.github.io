@@ -24,7 +24,7 @@ function Question_Generation() {
       };
 
       document.getElementById("problem_statement").textContent = `${Diameter_or_radius}${size}cmの${percentage}の面積`;
-      document.getElementById("complementary").textContent = "(円周率は3.14とする)";
+      document.getElementById("complementary").textContent = "(円周率は3.14までとする)";
       document.getElementById("Answers_to_the_question").innerHTML = "<br>";
       document.getElementById("formula").innerHTML = "<br>";
     }
