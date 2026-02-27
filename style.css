@@ -1,0 +1,78 @@
+@import url("https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css");
+body {
+  font-family: YakuHanJP, "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+}
+
+html {
+  background-color: #028760;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+.frame {
+  margin: auto;
+  border: 3px solid #333;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 90%;
+  background-color: #fcc800;
+  margin: 20px auto;
+}
+.input,
+.output {
+  flex: 1;
+}
+.input {
+  border-right: 3px solid #333;
+}
+.output {
+  margin-left: 5%;
+}
+input {
+  padding-left: 7.5px;
+  border-radius: 7.5px;
+  border: 2px solid black;
+  background-color: #89c3eb;
+}
+span {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .main {
+    flex-direction: column;
+  }
+  .input {
+    border-right: none;
+    border-bottom: 3px solid #333;
+    margin-bottom: 15px;
+    padding-bottom: 30px;
+  }
+  .output {
+    margin-left: 0;
+  }
+}
