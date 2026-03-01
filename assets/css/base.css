@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #028760;
+}
+
+body {
+  font-family: "YakuHanJP", "Inter", "Noto Sans JP", "sans-serif";
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+}
+
+noscript div {
+  max-width: 95%;
+  width: fit-content;
+  padding: 10px;
+  padding-top: 0;
+  border: 3px solid #333;
+  border-radius: 7.5px;
+}
+
+.frame {
+  width: 95%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fcc800;
+  border: 3px solid #333;
+  border-radius: 20px;
+}
+
+input {
+  padding-left: 7.5px;
+  background-color: #bce2e8;
+  border: 2px solid #333;
+  border-radius: 7.5px;
+  font-family: inherit;
+}
+
+.title {
+  margin: 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  display: block;
+  font-weight: bold;
+  unicode-bidi: isolate;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.h1 {
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+}
+
+.h2 {
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+}
+
+.h3 {
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.h4 {
+  font-size: 1em;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+}
+
+.h5 {
+  font-size: 0.83em;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+}
+
+.h6 {
+  font-size: 0.67em;
+  margin-block-start: 2.33em;
+  margin-block-end: 2.33em;
+}
