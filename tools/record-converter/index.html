@@ -7,6 +7,7 @@
       name="description"
       content="入力された距離と記録から、別の距離に換算した予想タイムや時速などを計算します。" />
     <meta name="theme-color" content="#028760" />
+    <meta name="robots" content="noindex, follow" />
     <title>記録変換</title>
     <!-- Favicon -->
     <link
@@ -26,6 +27,10 @@
     <meta name="apple-mobile-web-app-title" content="記録変換" />
     <link rel="manifest" href="record-converter.webmanifest" />
     <!-- Font -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css"
+      as="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css" />
@@ -55,30 +60,30 @@
             <p>ブラウザーの設定で、JavaScriptを有効化してください。</p>
           </div>
         </noscript>
-        <div class="main" id="main" style="display: none">
+        <div class="main" id="yesscript" style="display: none">
           <div class="input">
             <p class="h3">記録</p>
             <div class="length">
-              <span>
-                <input min="0" type="number" id="beforeLen" />
-                <label for="beforeLen">m</label>
-              </span>
+              <label>
+                <input min="0" step="1" type="number" id="beforeLen" />
+                m
+              </label>
             </div>
             <div class="time">
-              <span>
-                <input min="0" max="59" type="number" id="minutes" />
-                <label for="minutes">分</label>
-              </span>
-              <span>
+              <label>
+                <input min="0" step="1" type="number" id="minutes" />
+                分
+              </label>
+              <label>
                 <input min="0" max="59" type="number" id="seconds" />
-                <label for="seconds">秒</label>
-              </span>
+                秒
+              </label>
             </div>
             <p class="h3">変換後の距離</p>
-            <span>
-              <input min="0" type="number" id="afterLen" />
-              <label for="afterLen">m</label>
-            </span>
+            <label>
+              <input min="0" step="1" type="number" id="afterLen" />
+              m
+            </label>
           </div>
           <div class="output">
             <p class="h3">変換した記録</p>

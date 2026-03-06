@@ -1,1 +1,1 @@
-document.getElementById("main").removeAttribute("style");
+document.getElementById("yesscript").removeAttribute("style");
