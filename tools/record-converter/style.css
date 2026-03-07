@@ -3,6 +3,10 @@
   flex-wrap: wrap;
 }
 
+h3 {
+  margin: 7.5px 0;
+}
+
 .input,
 .output {
   flex: 1;
@@ -24,6 +28,10 @@
   margin-left: 5%;
 }
 
+.output p {
+  margin: 4px 0;
+}
+
 label {
   display: inline-flex;
   align-items: center;
@@ -37,7 +45,7 @@ label {
 
   .input {
     margin-bottom: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
     border-right: none;
     border-bottom: 3px solid #333;
   }
