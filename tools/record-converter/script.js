@@ -7,6 +7,33 @@ const mh = document.getElementById("hm"); // 時速の出力(m/h)
 const mm = document.getElementById("mm"); // 分速の出力(m/m)
 const ms = document.getElementById("sm"); // 秒速の出力(m/s)
 
+const params = new URLSearchParams(window.location.search); // クエリパラメータを取得
+const elements = [beforeLen, minutesInput, secondsInput, afterLen];
+const names = ["bl", "m", "s", "al"];
+
+applyParam();
+
+function applyParam() {
+  let param = false;
+
+  for (let i = 0; i < elements.length; i++) {
+    if (params.get(names[i]) != null) {
+      elements[i].value = params.get(names[i]);
+      param = true;
+    }
+  }
+
+  if (param) calculate();
+}
+
+function changeURL() {
+  for (let i = 0; i < elements.length; i++)
+    if (elements[i].value) params.set(names[i], elements[i].value);
+
+  const newURL = `${window.location.pathname}?${params.toString()}`;
+  history.replaceState(null, "", newURL);
+}
+
 function calculate() {
   const bL = parseFloat(beforeLen.value) || 0;
   const m = parseFloat(minutesInput.value) || 0;
@@ -39,7 +66,7 @@ function calculate() {
   }
 }
 
-beforeLen.addEventListener("input", calculate);
-minutesInput.addEventListener("input", calculate);
-secondsInput.addEventListener("input", calculate);
-afterLen.addEventListener("input", calculate);
+for (let i = 0; i < elements.length; i++)
+  elements[i].addEventListener("input", calculate);
+for (let i = 0; i < elements.length; i++)
+  elements[i].addEventListener("input", changeURL);
