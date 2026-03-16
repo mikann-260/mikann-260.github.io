@@ -57,6 +57,8 @@ function calculate() {
       const newMinute = Math.floor(newTime / 60);
       const newSecond = (newTime % 60).toFixed(0);
       output.textContent = `変換後のタイム: ${newMinute}分${newSecond}秒`;
+    } else {
+      output.textContent = `変換後のタイム: `;
     }
   } else {
     output.textContent = `変換後のタイム: `;
