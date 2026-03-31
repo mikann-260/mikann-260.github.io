@@ -7,7 +7,8 @@
       name="description"
       content="入力された距離と記録から、別の距離に換算した予想タイムや時速などを計算します。" />
     <meta name="theme-color" content="#028760" />
-    <meta name="robots" content="noindex, follow" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta author="mikann-260" />
     <title>記録変換</title>
     <!-- Favicon -->
     <link
@@ -28,23 +29,21 @@
     <link rel="manifest" href="record-converter.webmanifest" />
     <!-- Font -->
     <link
-      rel="preload"
       href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css"
-      as="style" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css" />
+      rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+      crossorigin="anonymous"
       rel="stylesheet" />
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/base.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/tools/assets/css/tools.css" />
+    <link rel="stylesheet" href="style.css" />
     <!-- JavaScript -->
     <script src="/assets/js/script.js" defer></script>
-    <script src="index.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="frame">
@@ -55,12 +54,12 @@
         </p>
         <noscript>
           <div>
-            <p class="h2">【JavaScriptが無効になっています】</p>
+            <h2>【JavaScriptが無効になっています】</h2>
             <p>このページはJavaScriptを使用しています。</p>
             <p>ブラウザーの設定で、JavaScriptを有効化してください。</p>
           </div>
         </noscript>
-        <div class="main" id="yesscript" style="display: none">
+        <div class="main" id="js-enabled" hidden>
           <div class="input">
             <h3>記録</h3>
             <div class="length">
@@ -86,11 +85,11 @@
             </label>
           </div>
           <div class="output">
-            <h3>変換した記録</h3>
-            <p id="output">変換後のタイム:</p>
-            <p id="hm">時速:</p>
-            <p id="mm">分速:</p>
-            <p id="sm">秒速:</p>
+            <h3>計算結果</h3>
+            <p ><span class="label">タイム</span> : <span id="output"></span></p>
+            <p ><span class="label">時速</span> : <span id="hm"></span></p>
+            <p ><span class="label">分速</span> : <span id="mm"></span></p>
+            <p ><span class="label">秒速</span> : <span id="sm"></span></p>
           </div>
         </div>
       </main>

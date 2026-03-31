@@ -1,0 +1,13 @@
+.time {
+  margin-top: 5px;
+}
+
+.time label input {
+  width: 80.7px;
+}
+
+.label {
+  display: inline-block;
+  width: 3.5em;
+  width: 3.5ic;
+}
