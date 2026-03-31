@@ -1,1 +1,1 @@
-document.getElementById("yesscript").removeAttribute("style");
+document.getElementById("js-enabled").hidden = false;
