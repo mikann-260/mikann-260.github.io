@@ -16,7 +16,7 @@ let isRunning = false;
 
 applyParam();
 
-function formatTime(ms, useTrunc) {
+function formatTime(ms) {
   const MsUnits = [31536000000, 2678400000, 86400000, 3600000, 60000, 1000];
   // 31536000000 = 1000 * 60 * 60 * 24 * 365(1年をミリ秒に変換した値)
   //  2678400000 = 1000 * 60 * 60 * 24 * 31 (1カ月をミリ秒に変換した値)
@@ -31,11 +31,9 @@ function formatTime(ms, useTrunc) {
   for (let i = 0; i < units.length; i++) {
     let value;
     if (i === 0) {
-      value = useTrunc
-        ? Math.trunc(Ms / MsUnits[i])
-        : Math.ceil(Ms / MsUnits[i]);
-    } else {
       value = Math.trunc(Ms / MsUnits[i]);
+    } else {
+      value = (Ms / MsUnits[i]).toFixed(0);
     }
 
     if (1 <= value || started) {
@@ -121,15 +119,18 @@ function calculate() {
       remainingTime = 0;
     }
 
-    howLongE.textContent = formatTime(howLong, true);
     if (percentE.textContent !== `${percent}%`) {
       percentE.textContent = `${percent}%`;
     }
-    const elapsedTimeText = formatTime(elapsedTime, true);
+    const HowLongText = formatTime(howLong);
+    if (howLongE.textContent !== HowLongText) {
+      howLongE.textContent = HowLongText;
+    }
+    const elapsedTimeText = formatTime(elapsedTime);
     if (elapsedTimeE.textContent !== elapsedTimeText) {
       elapsedTimeE.textContent = elapsedTimeText;
     }
-    const remainingTimeText = formatTime(remainingTime, false);
+    const remainingTimeText = formatTime(remainingTime);
     if (remainingTimeE.textContent !== remainingTimeText) {
       remainingTimeE.textContent = remainingTimeText;
     }
