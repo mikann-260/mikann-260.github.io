@@ -66,9 +66,9 @@ function calculate() {
     ms.textContent = `${(bL / time).toFixed(2)}m/s`;
 
     if (aL > 0) {
-      const newTime = ((time * aL) / bL).toFixed(1);
+      const newTime = (time * aL) / bL;
       const newMinute = Math.floor(newTime / 60);
-      const newSecond = newTime % 60;
+      const newSecond = (newTime % 60).toFixed(1);
       output.textContent = `${newMinute}分${newSecond}秒`;
     } else {
       output.textContent = "";
