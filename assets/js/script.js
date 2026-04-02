@@ -6,7 +6,7 @@ if (!new URLSearchParams(window.location.search).has("disable")) {
   script.defer = true;
   script.setAttribute(
     "data-cf-beacon",
-    '{"token": "9e707a26d8b34fc5a82d3bb5afeba95b"}',
+    '{"token": "2ef183f9463a46c8a32bc608fec54eaf"}',
   );
   document.head.appendChild(script);
 }
