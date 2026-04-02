@@ -1,9 +1,6 @@
 document.getElementById("js-enabled").hidden = false;
 
-const params = new URLSearchParams(window.location.search);
-const disable = params.has("disable");
-
-if (!disable) {
+if (!new URLSearchParams(window.location.search).has("disable")) {
   const script = document.createElement("script");
   script.src = "https://static.cloudflareinsights.com/beacon.min.js";
   script.defer = true;
