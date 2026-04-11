@@ -1,0 +1,84 @@
+name: "Build, Minify, Deploy Workflows"
+
+concurrency:
+  group: "github-pages"
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - "main"
+
+permissions:
+  contents: "read"
+  pages: "write"
+  id-token: "write"
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "Setup Ruby"
+        uses: "ruby/setup-ruby@v1"
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: "Build Jekyll"
+        run: "bundle exec jekyll build"
+
+      - name: "Save Build Outputs"
+        uses: "actions/upload-artifact@v4"
+        with:
+          name: "Build-Outputs"
+          path: "./_site"
+          retention-days: 7
+
+  minify:
+    runs-on: "ubuntu-latest"
+    needs: "build"
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "Load Build Outputs"
+        uses: "actions/download-artifact@v4"
+        with:
+          name: "Build-Outputs"
+          path: "./_site"
+
+      - name: "Setup Node"
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+
+      - name: "Install Minifier"
+        run: "npm ci"
+
+      - name: "Minify"
+        run: "npm run minify:unix"
+
+      - name: "Upload Pages Items"
+        uses: "actions/upload-pages-artifact@v3"
+        with:
+          path: "./_site"
+          retention-days: 7
+
+  deploy:
+    runs-on: "ubuntu-latest"
+    needs: "minify"
+    permissions:
+      pages: "write"
+      id-token: "write"
+    environment:
+      name: "github-pages"
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: "Deploy"
+        id: "deploy"
+        uses: "actions/deploy-pages@v4"

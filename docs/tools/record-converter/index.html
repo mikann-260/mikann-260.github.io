@@ -1,0 +1,63 @@
+---
+layout: "default"
+title: "記録変換"
+noSiteName: true
+description: "入力された距離と記録から、別の距離に換算した予想タイムや時速などを計算します。"
+pwa:
+  title: "記録変換"
+  manifest: "/tools/record-converter/record-converter.webmanifest"
+extra:
+  css:
+    - "/tools/assets/css/tools.css"
+    - "/tools/record-converter/style.css"
+  js:
+    - "/tools/record-converter/script.js"
+sitemap: false
+seo:
+  type: "WebPage"
+published_date: 2026-02-28
+last_modified_at: 2026-04-02
+---
+
+<h1 class="title">記録変換</h1>
+<p>
+  入力された距離と記録から、別の距離に換算した予想タイムや時速などを計算します。
+</p>
+{% include noscript.html %}
+<div class="main" id="js-enabled" hidden>
+  <div class="input">
+    <fieldset>
+      <legend class="h3">記録</legend>
+      <div class="length">
+        <label>
+          <input min="0" step="1" type="number" id="beforeLen" />
+          m
+        </label>
+      </div>
+      <div class="time">
+        <label>
+          <input min="0" step="1" type="number" id="minutes" />
+          分
+        </label>
+        <label>
+          <input min="0" max="59" type="number" id="seconds" />
+          秒
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="h3">変換後の距離</legend>
+      <label>
+        <input min="0" step="1" type="number" id="afterLen" />
+        m
+      </label>
+    </fieldset>
+  </div>
+  <div class="output">
+    <h3>計算結果</h3>
+    <p><span class="label">タイム</span> : <span id="output"></span></p>
+    <p><span class="label">時速</span> : <span id="hm"></span></p>
+    <p><span class="label">分速</span> : <span id="mm"></span></p>
+    <p><span class="label">秒速</span> : <span id="sm"></span></p>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+{
+  "name": "tryjekyll",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/mikann-260/Jekyll_Practice#readme",
+  "bugs": {
+    "url": "https://github.com/mikann-260/Jekyll_Practice/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikann-260/Jekyll_Practice.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "minify:windows": "npm run minify:html:windows && npm run minify:css:windows && npm run minify:js:windows",
+    "minify:unix": "npm run minify:html:unix && npm run minify:css:unix && npm run minify:js:unix",
+    "minify:html:windows": "html-minifier-terser --input-dir ./_site --output-dir ./_site --file-ext html --remove-comments --collapse-whitespace --minify-css true --minify-js true",
+    "minify:css:windows": "powershell -Command \"Get-ChildItem -Recurse -Filter *.css _site | ForEach-Object {cleancss -o $_.FullName $_.FullName}\"",
+    "minify:js:windows": "powershell -Command \"Get-ChildItem -Recurse -Filter *.js _site | ForEach-Object {terser $_.FullName -o $_.FullName --compress --mangle }\"",
+    "minify:html:unix": "html-minifier-terser --input-dir ./_site --output-dir ./_site --file-ext html --remove-comments --collapse-whitespace --minify-css true --minify-js true",
+    "minify:css:unix": "bash -c \"find _site -name '*.css' -exec cleancss -o {} {} \\;\"",
+    "minify:js:unix": "bash -c \"find _site -name '*.js' -exec terser {} -o {} --compress --mangle \\;\""
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "html-minifier-terser": "^7.2.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-liquid": "^0.0.1-security",
+    "terser": "^5.46.1"
+  }
+}
