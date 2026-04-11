@@ -1,0 +1,14 @@
+# Jekyll build / cache files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby (Bundler)
+vendor/
+
+# Node.js
+node_modules/
+
+# Other
+todo.md

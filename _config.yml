@@ -1,0 +1,24 @@
+# サイト基本情報
+title: "mikann-260"
+description: "mikann-260のサイトです。"
+lang: ja
+timezone: Asia/Tokyo
+
+# PWA
+pwa: false
+
+# URL設定
+url: "https://mikann-260.github.io"
+baseurl: ""
+
+# 作成者
+author:
+  name: "mikann-260"
+
+# ビルド設定
+source: "docs"
+
+# プラグイン
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

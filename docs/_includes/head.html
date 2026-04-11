@@ -1,0 +1,59 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#028760" />
+<meta name="google-site-verification" content="YXWdwa2HAg_VdsD4uW7mkdOaZ8CtlTOaGcZrMvWzfA0" />
+{% if page.Is404 %}
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+{% else %}
+  <meta name="robots" content="{{ page.robots | default: "index, follow"}}" />
+  {% if page.noSiteName %}
+    <title>{{ page.title }}</title>
+    {% seo title=false %}
+  {% else %}
+    {% seo %}
+  {% endif %}
+{% endif %}
+<!-- Favicon -->
+<link
+  rel="icon"
+  type="image/png"
+  href="{{ "/assets/images/favicon/favicon-96x96.png" | relative_url }}"
+  sizes="96x96" />
+<link
+  rel="icon"
+  type="image/svg+xml"
+  href="{{ "/assets/images/favicon/favicon.svg" | relative_url }}" />
+<link rel="shortcut icon" href="{{ "/assets/images/favicon/favicon.ico" | relative_url }}" />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="{{ "/assets/images/favicon/apple-touch-icon.png" | relative_url }}" />
+{% if page.pwa or site.pwa %}
+  <meta name="apple-mobile-web-app-title" content="{{ page.pwa.title | default: site.pwa.title}}" />
+  <link rel="manifest" href="{{ page.pwa.manifest | default: site.pwa.manifest| relative_url }}" />
+{% endif %}
+<!-- Font -->
+<link
+  href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css"
+  rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+  crossorigin="anonymous"
+  rel="stylesheet" />
+<!-- CSS -->
+<link rel="stylesheet" href="{{ "/assets/css/base.css" | relative_url }}" />
+{% if page.extra.css %}
+  {% for css in page.extra.css %}
+    <link rel="stylesheet" href="{{ css | relative_url }}" />
+  {% endfor %}
+{% endif %}
+<!-- JavaScript -->
+<script src="{{ "/assets/js/script.js" | relative_url }}" type="module" defer></script>
+{% if page.extra.js %}
+  {% for js in page.extra.js %}
+    <script src="{{ js | relative_url }}" defer></script>
+  {% endfor %}
+{% endif %}

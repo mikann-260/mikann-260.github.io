@@ -1,0 +1,58 @@
+---
+layout: "default"
+title: "経過率計算"
+description: "入力された開始時間と終了時間から、現在どれだけ経過したかを計算します。"
+extra:
+  css:
+    - "/tools/assets/css/tools.css"
+    - "/tools/progress/style.css"
+  js:
+    - "/tools/progress/script.js"
+seo:
+  type: "WebPage"
+published_date: 2026-04-01
+last_modified_at: 2026-04-02
+---
+
+<h1 class="title">経過率計算</h1>
+<p>入力された開始時間と終了時間から、現在どれだけ経過したかを計算します。</p>
+<ul>
+  <li>1年は365日、1カ月は31日として計算されます。</li>
+  <li>開始日時よりも終了日時の方が後である必要があります。</li>
+  <li>日付の入力は必須です。</li>
+  <li>時間は未入力の場合、午前0時として扱われます。</li>
+</ul>
+{% include noscript.html %}
+<div class="main" id="js-enabled" hidden>
+  <div class="input">
+    <fieldset class="tdinput">
+      <legend class="h3">開始日時</legend>
+      <input type="date" id="sDate" />
+      <input type="time" step="1" id="sTime" />
+    </fieldset>
+    <fieldset class="tdinput">
+      <legend class="h3">終了日時</legend>
+      <input type="date" id="fDate" />
+      <input type="time" step="1" id="fTime" />
+    </fieldset>
+  </div>
+  <div class="output">
+    <h3>計算結果</h3>
+    <p>
+      <span class="label">経過率</span> :&nbsp;<br class="outputBr" />
+      <span id="percent" class="outputSpan"></span>
+    </p>
+    <p>
+      <span class="label">長さ</span> :&nbsp;<br class="outputBr" />
+      <span id="howLong" class="outputSpan"></span>
+    </p>
+    <p>
+      <span class="label">経過時間</span> :&nbsp;<br class="outputBr" />
+      <span id="elapsedTime" class="outputSpan"></span>
+    </p>
+    <p>
+      <span class="label">残り時間</span> :&nbsp;<br class="outputBr" />
+      <span id="remainingTime" class="outputSpan"></span>
+    </p>
+  </div>
+</div>

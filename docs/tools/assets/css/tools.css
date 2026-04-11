@@ -1,0 +1,59 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h3 {
+  margin: 7.5px 0;
+}
+
+.input,
+.output {
+  flex: 1;
+}
+
+.input {
+  border-right: 3px solid #333;
+}
+
+.input > fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input > fieldset > legend {
+  margin: 7.5px 0;
+  padding: 0;
+}
+
+.output {
+  margin-left: 5%;
+}
+
+.output p {
+  margin: 4px 0;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .input {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-right: none;
+    border-bottom: 3px solid #333;
+  }
+
+  .output {
+    margin-left: 0;
+  }
+}
