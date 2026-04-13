@@ -1,3 +1,5 @@
+---
+---
 const jsEnabled = document.getElementById("js-enabled");
 if (jsEnabled) {
   jsEnabled.hidden = false;
@@ -16,7 +18,7 @@ if (localStorage.getItem("cloudflare-disable") !== "true") {
   script.defer = true;
   script.setAttribute(
     "data-cf-beacon",
-    '{"token": "2ef183f9463a46c8a32bc608fec54eaf"}',
+    '{"token": "{{ site.cloudflare.token }}"',
   );
   document.head.appendChild(script);
 }

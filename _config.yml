@@ -13,6 +13,14 @@ pwa:
 url: "https://mikann-260.github.io"
 baseurl: ""
 
+# Google Search Console
+google_search_console:
+  verification: "YXWdwa2HAg_VdsD4uW7mkdOaZ8CtlTOaGcZrMvWzfA0"
+
+# Cloudflare Web Analysis
+cloudflare:
+  token: "2ef183f9463a46c8a32bc608fec54eaf"
+
 # 作成者
 author:
   name: "mikann-260"
