@@ -1,11 +1,13 @@
 # サイト基本情報
 title: "mikann-260"
 description: "mikann-260のサイトです。"
-lang: ja
-timezone: Asia/Tokyo
+lang: "ja"
+timezone: "Asia/Tokyo"
 
 # PWA
-pwa: false
+pwa:
+  enabled: false
+  title: "mikann-260"
 
 # URL設定
 url: "https://mikann-260.github.io"

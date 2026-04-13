@@ -29,7 +29,7 @@
   rel="apple-touch-icon"
   sizes="180x180"
   href="{{ "/assets/images/favicon/apple-touch-icon.png" | relative_url }}" />
-{% if page.pwa or site.pwa %}
+{% if page.pwa.enabled or site.pwa.enabled %}
   <meta name="apple-mobile-web-app-title" content="{{ page.pwa.title | default: site.pwa.title}}" />
   <link rel="manifest" href="{{ page.pwa.manifest | default: site.pwa.manifest| relative_url }}" />
 {% endif %}
