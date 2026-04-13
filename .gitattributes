@@ -1,5 +1,4 @@
-Gemfile linguist-vendored
-Gemfile.lock linguist-vendored
-package.json linguist-vendored
-package-lock.json linguist-vendored
-.bundle/config linguist-vendored
+docs/** linguist-documentation=false
+
+Gemfile.lock linguist-generated=true
+package-lock.json linguist-generated=true
