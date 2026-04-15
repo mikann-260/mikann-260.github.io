@@ -18,7 +18,7 @@ if (localStorage.getItem("cloudflare-disable") !== "true") {
   script.defer = true;
   script.setAttribute(
     "data-cf-beacon",
-    '{"token": "{{ site.cloudflare.token }}"',
+    '{"token": "{{ site.cloudflare.token }}}"',
   );
   document.head.appendChild(script);
 }
