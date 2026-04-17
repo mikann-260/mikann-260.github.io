@@ -16,11 +16,11 @@ if (cloudflareDisable === "true") {
 }
 if (localStorage.getItem("cloudflare-disable") !== "true") {
   const script = document.createElement("script");
-  script.src = "https://static.cloudflareinsights.com/beacon.min.js";
   script.defer = true;
+  script.src = "https://static.cloudflareinsights.com/beacon.min.js";
   script.setAttribute(
     "data-cf-beacon",
-    '{"token": "{{ site.cloudflare.token }}}"',
+    '{"token": "{{ site.cloudflare.token }}"}',
   );
   document.head.appendChild(script);
 }
