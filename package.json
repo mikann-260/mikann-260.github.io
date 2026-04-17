@@ -1,14 +1,14 @@
 {
-  "name": "tryjekyll",
+  "name": "mikann-260.github.io",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/mikann-260/Jekyll_Practice#readme",
+  "homepage": "https://github.com/mikann-260/mikann-260.github.io#readme",
   "bugs": {
-    "url": "https://github.com/mikann-260/Jekyll_Practice/issues"
+    "url": "https://github.com/mikann-260/mikann-260.github.io/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mikann-260/Jekyll_Practice.git"
+    "url": "git+https://github.com/mikann-260/mikann-260.github.io.git"
   },
   "license": "ISC",
   "author": "",
