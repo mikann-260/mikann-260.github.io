@@ -51,7 +51,7 @@
   {% endfor %}
 {% endif %}
 <!-- JavaScript -->
-<script src="{{ "/assets/js/script.js" | relative_url }}" type="module" defer></script>
+<script src="{{ "/assets/js/script.js" | relative_url }}" type="module"></script>
 {% if page.extra.js %}
   {% for js in page.extra.js %}
     <script src="{{ js | relative_url }}" defer></script>
