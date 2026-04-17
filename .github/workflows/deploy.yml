@@ -14,6 +14,7 @@ on:
       - "LICENSE"
       - "README.md"
       - ".bundle/config"
+  workflow_dispatch:
 
 permissions:
   contents: "read"
