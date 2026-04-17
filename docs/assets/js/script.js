@@ -5,11 +5,13 @@ if (jsEnabled) {
   jsEnabled.hidden = false;
 }
 
-const cloudflareDisable = new URLSearchParams(window.location.search);
+const cloudflareDisable = new URLSearchParams(window.location.search).get(
+  "cloudflareDisable",
+);
 
-if (cloudflareDisable.get("cloudflareDisable") === "true") {
+if (cloudflareDisable === "true") {
   localStorage.setItem("cloudflare-disable", "true");
-} else if (cloudflareDisable.get("cloudflareDisable") === "false") {
+} else if (cloudflareDisable === "false") {
   localStorage.removeItem("cloudflare-disable");
 }
 if (localStorage.getItem("cloudflare-disable") !== "true") {
